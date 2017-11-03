@@ -1,0 +1,975 @@
+@charset "UTF-8";
+
+/**
+ *
+ * @authors Your Name (you@example.org)
+ * @date    2016-05-23 17:49:20
+ * @version $Id$
+ */
+
+/*重设*/
+
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, q, dl, dt, dd, ol, ul, li, fieldset, form, legend, caption, tbody, tfoot, thead, article, aside, dialog, figure, footer, header, hgroup, nav, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 14px;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, dialog, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    background: #fff;
+    color: #555;
+    font: 14px/1.5 "Microsoft YaHei", tahoma, arial, Hiragino Sans GB, \5b8b\4f53;
+}
+img {
+    border: 0;
+    vertical-align: bottom;
+}
+::-webkit-input-placeholder {
+    color: #999;
+}
+:-moz-placeholder {
+    color: #999;
+}
+::-moz-placeholder {
+    color: #999;
+}
+:-ms-input-placeholder {
+    color: #ccc;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+textarea {
+    overflow: auto;
+}
+input:focus, textarea:focus, button:focus, select:focus {
+    outline: none;
+}
+input::-ms-clear {
+    display: none;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+[hidden], template {
+    display: none;
+}
+a {
+    background: transparent;
+}
+a:visited, a:hover, a:active, a:focus {
+    outline: none;
+}
+
+/*
+a:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}*/
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+b, strong {
+    font-weight: bold;
+}
+dfn {
+    font-style: italic;
+}
+mark {
+    color: #000;
+    background: #ff0;
+}
+small {
+    font-size: 80%;
+}
+sub, sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+sup {
+    top: -.5em;
+}
+sub {
+    bottom: -.25em;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+figure {
+    margin: 1em 40px;
+}
+hr {
+    height: 0;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+pre {
+    overflow: auto;
+}
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+}
+button {
+    overflow: visible;
+}
+button, select {
+    text-transform: none;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+input {
+    line-height: normal;
+}
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+input[type="search"] {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+fieldset {
+    padding: .35em .625em .75em;
+    margin: 0 2px;
+    border: 1px solid #c0c0c0;
+}
+legend {
+    padding: 0;
+    border: 0;
+}
+optgroup {
+    font-weight: bold;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+td, th {
+    padding: 0;
+}
+.clearfix {
+    *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+.hide {
+    display: none;
+}
+
+/*容器*/
+.layout {
+    width: 100%;
+}
+
+/**
+ * oak-cols
+ */
+.oak-cols, .oak-cols-2, .oak-cols-3, .oak-cols-4, .oak-cols-5, .oak-cols-6, .oak-cols-8, .oak-cols-12 {
+    letter-spacing: -0.31em;
+    *letter-spacing: normal;
+    *word-spacing: -0.43em;
+    text-rendering: optimizespeed;
+    display: -webkit-flex;
+    -webkit-flex-flow: row wrap;
+    display: -ms-flexbox;
+    -ms-flex-flow: row wrap;
+}
+.opera-only:-o-prefocus, .oak-cols {
+    word-spacing: -0.43em;
+}
+[class *="cols"] > li, .oak-col {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+.oak-cols [class *="col"] {
+    font-family: sans-serif;
+}
+.oak-col-1, .oak-col-1-1, .oak-col-1-2, .oak-col-1-3, .oak-col-2-3, .oak-col-1-4, .oak-col-3-4, .oak-col-1-5, .oak-col-2-5, .oak-col-3-5, .oak-col-4-5, .oak-col-5-5, .oak-col-1-6, .oak-col-5-6, .oak-col-1-8, .oak-col-3-8, .oak-col-5-8, .oak-col-7-8, .oak-col-1-12, .oak-col-5-12, .oak-col-7-12, .oak-col-11-12, .oak-col-1-24, .oak-col-2-24, .oak-col-3-24, .oak-col-4-24, .oak-col-5-24, .oak-col-6-24, .oak-col-7-24, .oak-col-8-24, .oak-col-9-24, .oak-col-10-24, .oak-col-11-24, .oak-col-12-24, .oak-col-13-24, .oak-col-14-24, .oak-col-15-24, .oak-col-16-24, .oak-col-17-24, .oak-col-18-24, .oak-col-19-24, .oak-col-20-24, .oak-col-21-24, .oak-col-22-24, .oak-col-23-24, .oak-col-24-24 {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+.oak-col-1-24 {
+    width: 4.1667%;
+    *width: 4.1357%;
+}
+.oak-col-1-12, .oak-col-2-24, .oak-cols-12 .oak-col {
+    width: 8.3333%;
+    *width: 8.3023%;
+}
+.oak-col-1-8, .oak-col-3-24, .oak-cols-8 .oak-col {
+    width: 12.5000%;
+    *width: 12.4690%;
+}
+.oak-col-1-6, .oak-col-4-24, .oak-cols-6 .oak-col {
+    width: 16.6667%;
+    *width: 16.6357%;
+}
+.oak-col-1-5, .oak-cols-5 .oak-col {
+    width: 20%;
+    *width: 19.9690%;
+}
+.oak-col-5-24 {
+    width: 20.8333%;
+    *width: 20.8023%;
+}
+.oak-col-1-4, .oak-col-6-24, .oak-cols-4 .oak-col {
+    width: 25%;
+    *width: 24.9690%;
+}
+.oak-col-7-24 {
+    width: 29.1667%;
+    *width: 29.1357%;
+}
+.oak-col-1-3, .oak-col-8-24, .oak-cols-3 .oak-col {
+    width: 33.3333%;
+    *width: 33.3023%;
+}
+.oak-col-3-8, .oak-col-9-24 {
+    width: 37.5000%;
+    *width: 37.4690%;
+}
+.oak-col-2-5 {
+    width: 40%;
+    *width: 39.9690%;
+}
+.oak-col-5-12, .oak-col-10-24 {
+    width: 41.6667%;
+    *width: 41.6357%;
+}
+.oak-col-11-24 {
+    width: 45.8333%;
+    *width: 45.8023%;
+}
+.oak-col-1-2, .oak-col-12-24, .oak-cols-2 .oak-col {
+    width: 50%;
+    *width: 49.9690%;
+}
+.oak-col-13-24 {
+    width: 54.1667%;
+    *width: 54.1357%;
+}
+.oak-col-7-12, .oak-col-14-24 {
+    width: 58.3333%;
+    *width: 58.3023%;
+}
+.oak-col-3-5 {
+    width: 60%;
+    *width: 59.9690%;
+}
+.oak-col-5-8, .oak-col-15-24 {
+    width: 62.5000%;
+    *width: 62.4690%;
+}
+.oak-col-2-3, .oak-col-16-24 {
+    width: 66.6667%;
+    *width: 66.6357%;
+}
+.oak-col-17-24 {
+    width: 70.8333%;
+    *width: 70.8023%;
+}
+.oak-col-3-4, .oak-col-18-24 {
+    width: 75%;
+    *width: 74.9690%;
+}
+.oak-col-19-24 {
+    width: 79.1667%;
+    *width: 79.1357%;
+}
+.oak-col-4-5 {
+    width: 80%;
+    *width: 79.9690%;
+}
+.oak-col-5-6, .oak-col-20-24 {
+    width: 83.3333%;
+    *width: 83.3023%;
+}
+.oak-col-7-8, .oak-col-21-24 {
+    width: 87.5000%;
+    *width: 87.4690%;
+}
+.oak-col-11-12, .oak-col-22-24 {
+    width: 91.6667%;
+    *width: 91.6357%;
+}
+.oak-col-23-24 {
+    width: 95.8333%;
+    *width: 95.8023%;
+}
+.oak-col-1, .oak-col-1-1, .oak-col-5-5, .oak-col-24-24 {
+    width: 100%;
+}
+
+/*header*/
+.layout-top {
+    width: 100%;
+    min-width: 1000px;
+    height: 26px;
+    background: #000;
+}
+.layout-top-fixed {
+    width: 100%;
+    min-width: 1000px;
+    height: 26px;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+.top-nav {
+    width: 80%;
+    min-width: 1000px;
+    height: 26px;
+    margin: 0 auto;
+}
+.top-nav a {
+    color: #fff;
+    text-decoration: none;
+}
+.top-nav-left {
+    float: left;
+    display: inline;
+    height: 26px;
+    line-height: 26px;
+}
+.top-nav-right, .nav-silder {
+    float: right;
+    display: inline;
+}
+.top-nav-right li {
+    list-style: none;
+    float: left;
+    width: 90px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+}
+.top-nav-right li.welcome-silde{
+	 width: 200px;
+	 color: #fff;
+}
+.top-nav-right li.business-silde {
+	position: relative;
+    z-index: 11;  
+}
+.top-nav-right li.phone-silde {
+    width: 80px;
+}
+.top-nav-right li.wechat-silde {
+    width: 36px;
+}
+.top-nav-right li.tele-silde {
+    width: 196px;
+    color: #fff;
+}
+.top-nav-right li.business-silde:hover > ul {
+    display: block;
+}
+
+/**导航菜单*/
+.nav-position {
+    position: relative;
+    z-index: 10;
+}
+.position-bg {
+    width: 100%;
+    height: 96px;
+    background: #fff;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 980;
+}
+.position-elem {
+    position: absolute;
+    width: 100%;
+    height: 96px;
+    top: 0;
+    left: 0;
+    z-index: 990;
+}
+
+.business-down {
+    display: none;
+    width: 114px;
+    background: #000;
+    border-top: 2px solid #b40000;
+    position: absolute;
+    left: 17px;
+    top: 26px;
+    z-index: 1000;
+    margin-left: -28px;
+}
+.business-down li {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+}
+.business-down li a {
+    display: block;
+    width: 100%;
+    height: 36px;
+}
+.business-down li a:hover {
+    background: #b40000;
+}
+.top-nav-right li.help-silde {
+    width: 72px;
+    text-align: right;
+}
+
+/*图标*/
+.icon-nav {
+    display: inline-block;
+    *display: inline;
+    color: #fff;
+    font-size: 14px;
+}
+.icon-tele {
+    display: inline-block;
+    *display: inline;
+    margin-right: 2px;
+    font-size: 14px;
+}
+.icon-business {
+    font-size: 14px;
+    margin-right: 4px;
+}
+.icon-personal {
+    margin-right: 2px;
+}
+.spacer {
+    margin: 0 6px;
+    color: #fff;
+}
+
+/*导航栏*/
+.layout-nav {
+    clear: both;
+    width: 100%;
+    min-width: 1024px;
+    height: 96px;
+    background: #fff;
+}
+.nav-warp {
+    width: 70%;
+    min-width: 960px;
+    height: 96px;
+    margin: 0 auto;
+}
+.nav-logo {
+    float: left;
+    width: 170px;
+    height: 44px;
+    margin-top: 28px;
+    background: url("logo-dfft.png")/*tpa=http://www.yinshanfu.com.cn/css/images/logo-dfft.png*/ no-repeat 0 0;
+    text-indent: -999px;
+}
+.logotitle{float:left;padding-left:8px;margin-top:31px;height:30px;line-height:30px;font-size:20px;border-left:1px solid #000;color:#000;}
+.nav-silder {
+    margin-top: 40px;
+    height: 56px;
+}
+.nav-silder li {
+    float: left;
+    width: 98px;
+    height: 56px;
+    list-style: none;
+    text-align: center;
+    position: relative;
+    z-index: 9;
+}
+.nav-silder li a {
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+}
+.nav-silder li:hover a.nav, .nav-silder li a.nav.on {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    font-size: 16px;
+    padding-bottom: 27px;
+    border-bottom: 5px solid #b40000;
+}
+.nav-silder li:hover a.nav {
+    color: #b40000;
+}
+.nav-silder li:hover > ul {
+    display: block;
+}
+.nav-silder li ul {
+    display: none;
+    width: 146px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 56px;
+    z-index: 1100;
+    margin-left: -22px;
+    box-shadow: 0 0 1px #ddd inset;
+}
+.nav-silder li ul li {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+.nav-silder li ul li a {
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px 0;
+    text-align: center;
+}
+.nav-silder li ul li:hover a {
+    background: #b40000;
+    color: #fff;
+}
+.nav-silder li ul li.nav-silder-spacer {
+    width: 130px;
+    margin: 0 8px;
+    height: 1px;
+    background: #f4f4f2;
+}
+.layout-top-imgtip {
+    width: 100%;
+    height: 152px;
+    background: url("bg-product-person.jpg")/*tpa=http://www.yinshanfu.com.cn/css/images/bg-product-person.jpg*/ no-repeat center top;
+    background-size: cover;
+}
+.layout-top-imgbox {
+    width: 70%;
+    height: 152px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 8;
+}
+.layout-top-imgtip-txt {
+    width: 357px;
+    height: 40px;
+    background: url("text-grfw.png")/*tpa=http://www.yinshanfu.com.cn/css/images/text-grfw.png*/ no-repeat 0 0;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    z-index: 980;
+    margin-top: -20px;
+    margin-left: 30px;
+}
+
+/*footer*/
+#footer {
+    clear: both;
+    background: #1c202c;
+    padding-top: 30px;
+}
+.footer-warp {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.footer-warp-silder {
+    float: left;
+    width: 50%;
+    *width: 49%;
+}
+.silder-link {
+    padding-bottom: 30px;
+    color: #fff;
+}
+.silder-link h3 {
+    height: 26px;
+    line-height: 26px;
+    margin-bottom: 6px;
+}
+.silder-link h3 span {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    border-bottom: 1px solid #fff;
+}
+.silder-link a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 6px;
+}
+.silder-link a.first-child {
+    margin-left: 0
+}
+.silder-link p {
+    height: 26px;
+    line-height: 26px;
+}
+.silder-link p a {
+    margin: 0;
+}
+.section {
+    width: 100%;
+    min-width: 1024px;
+}
+#fp-nav ul li:last-child {
+    display: none;
+}
+.rest-top {
+    width: 100%;
+    min-width: 1024px;
+    height: 274px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+.section-box {
+    height: 288px;/*    background: #999;*/
+    position: absolute;
+    top: 242px;
+    left: 50%;
+    z-index: 3;
+    margin: 0;
+}
+.section-title {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+.section-title span {
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #b40000;
+}
+.layout-top-enterprise {
+    width: 100%;
+    height: 152px;
+    background: url("bg-product-company.jpg")/*tpa=http://www.yinshanfu.com.cn/css/images/bg-product-company.jpg*/ no-repeat center top;
+    background-size: cover;
+}
+.layout-enterprise-imgbox {
+    width: 960px;
+    height: 152px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 8;
+}
+.layout-enterprise {
+    float: left;
+    width: 100%;
+    height: 152px;
+    position: relative;
+}
+.layout-enterprise-left {
+    float: left;
+    width: 130px;
+    height: 40px;
+    background: url("text-qyfw.png")/*tpa=http://www.yinshanfu.com.cn/css/images/text-qyfw.png*/ no-repeat 0 0;
+    margin-top: 56px;
+    margin-left: 50px;
+}
+.layout-enterprise-right {
+    float: left;
+    margin-top: 54px;
+    margin-left: 25px;
+}
+.layout-enterprise-right li {
+    list-style: none;
+    float: left;
+    width: 200px;
+    height: 40px;
+    margin: 0 15px;
+}
+.layout-enterprise-right li a {
+    display: block;
+    background: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #555;
+}
+.layout-enterprise-right li a:hover, .layout-enterprise-right li a.on {
+    background: #cc0000;
+    color: #fff;
+}
+.bg-up-arown {
+    width: 28px;
+    height: 16px;
+    background: url("up-arrown.png")/*tpa=http://www.yinshanfu.com.cn/css/images/up-arrown.png*/ no-repeat 0 0;
+    position: absolute;
+    left: 300px;
+    bottom: 0px;
+    z-index: 6;
+}
+.bg-up-arown.bill {
+    left: 534px;
+}
+.bg-up-arown.wealth {
+    left: 766px
+}
+
+/*联系方式*/
+.contactbg {
+    width: 100%;
+    height: 100%;
+    background: url("contact-back.png")/*tpa=http://www.yinshanfu.com.cn/css/images/contact-back.png*/ no-repeat 0 0;
+    background-size: cover;
+    position: absolute;
+    top: 274px;
+    left: 0;
+    z-index: 1;
+}
+.contactcover {
+    width: 100%;
+    height: 286px;
+    position: absolute;
+    top: 274px;
+    left: 0;
+    z-index: 2;
+}
+.contactcover-op {
+    width: 70%;
+    min-width: 960px;
+    height: 100%;
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+    margin: 0 auto;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    box-shadow: 0 0 38px rgba(0, 0, 0, 0.4);
+}
+.contact {
+    width: 407px;
+    height: 58px;
+    background: url("contact-bg.png")/*tpa=http://www.yinshanfu.com.cn/css/images/contact-bg.png*/ no-repeat 0 0;
+    margin: 20px auto 0;
+}
+.contact .contact-title {
+    float: left;
+    width: 126px;
+    height: 58px;
+    line-height: 58px;
+    font-size: 18px;
+    text-align: center;
+    color: #d40000;
+}
+.contact .contact-mode {
+    float: left;
+    width: 278px;
+    height: 58px;
+    line-height: 58px;
+    font-size: 14px;
+    color: #fff;
+}
+.contact .contact-mode span.first {
+    padding: 0 0 0 38px;
+}
+.contact .contact-mode span.last {
+    padding: 0 0 0 16px;
+}
+.top-nav-right li.business-silde:hover > .code-down {
+    display: block;
+}
+
+
+.code-down{
+    display: none;
+}
+.code-down img{
+   margin-left: -18px;
+}
+.top-nav-right li.help-silde {
+    width: 72px;
+    text-align: right;
+}
+.ui-layout-top-imgtip {
+	margin-top:100px;
+    width: 100%;
+    height: 152px;
+    background: url("new_01.png")/*tpa=http://www.yinshanfu.com.cn/css/images/new_01.png*/ no-repeat center top;
+    background-size: 100% 100%;
+}
+.ui-layout-top-imgbox {
+    width: 70%;
+    height: 152px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 8;
+}
+.ui-layout-top-imgtip-txt {
+    width: 357px;
+    height: 40px;
+    background: url("new_02.png")/*tpa=http://www.yinshanfu.com.cn/css/images/new_02.png*/ no-repeat 0 0;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    z-index: 980;
+    margin-top: -15px;
+    margin-left: 30px;
+}
+.ui-main-box{
+	height: 480px;
+	padding-left:270px;
+}
+.ui-main-lf{
+	padding-top:50px ; 
+	float: left;
+	/*width: 365px;*/
+}
+.ui-main-lf-text{
+	height: 25px;
+	width: 301px;
+	margin-top: 50px;
+	background: url("new_07.png")/*tpa=http://www.yinshanfu.com.cn/css/images/new_07.png*/ no-repeat;
+	position: relative;
+}
+.ui-lf-text-a{ 
+	height: 22px; 
+	width: 90px; 
+	border: 1px solid #cc0000; 
+	color: #cc0000; 
+	border-radius: 4px;
+	position: absolute;
+	right: 50px;
+	top: 2px;
+	font-size: 14px;
+	text-align: center;
+    line-height: 20px;
+    text-decoration: none;
+}
+.ui-main-rt{ 
+	width: 640px;
+	float: left;
+	margin-left: 20px;
+}
+.ui-main-rt-box{ 
+	margin-top: 40px; 
+	width: 560px;
+}
+.ui-main-rt-box p.p1 span{
+	font-size: 16px; 
+	font-weight: 600; 
+	padding-bottom: 5px;
+	border-bottom: 1px solid #cc0000; }
+.ui-main-rt-box p.p2{
+	font-size: 14px; 
+	padding-top: 20px;
+	line-height: 21px;
+}
+.ui-main-rt-boxs{ 
+	margin-top: 40px; 
+	width: 600px;
+}
+.ui-main-rt-boxs p.p1 span{
+	font-size: 16px; 
+	font-weight: 600;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #cc0000; 
+}
+.ui-main-rt-boxs p.p2{
+	font-size: 14px;
+	margin-top: 20px;
+	line-height: 21px;
+	background: url("dd.png")/*tpa=http://www.yinshanfu.com.cn/css/images/dd.png*/ no-repeat -3px 4px ; text-indent: 10px;
+}
+.ui-main-rt-boxs p.p3{
+	font-size: 14px;
+	line-height: 21px;
+	background: url("dd.png")/*tpa=http://www.yinshanfu.com.cn/css/images/dd.png*/ no-repeat -3px 4px ; text-indent: 10px;
+}
+.ui-main-rt-boxss{ 
+	width: 630px;
+	margin-top: 40px; 
+}
+.ui-main-rt-boxss p.p1 span{
+	font-size: 16px; 
+	font-weight: 600;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #cc0000; 
+}
+
+.ui-main-rt-boxss ul.ui-ulone{margin-top: 20px; }
+.ui-main-rt-boxss ul li{
+	list-style: none; 
+	float: left;
+	font-size:14px;
+	line-height: 23px;
+}
+.ui-main-rt-boxss ul li.ui-li1{ width: 250px;}
+.ui-main-rt-boxss ul li.ui-li2{ width: 180px;}
+.ui-main-rt-boxss ul li ul li{ width: 100%;}
+.ui-main-rt-boxss ul li ul li.ui-lis{ font-size: 16px; margin: 5px 0;}
